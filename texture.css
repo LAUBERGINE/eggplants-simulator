@@ -1,0 +1,27 @@
+:root{
+    --water-color : #328bff;
+    --grass-color : #1dcf34;
+    --sand-color : #ff0;
+    --tree-color : #34ad44;
+    --home-color: #ff0012;
+    --water-blocked-color: #000083;
+}
+
+.water{
+    background-color: var(--water-color);
+}
+.grass{
+    background-color: var(--grass-color);
+}
+.sand{
+    background-color: var(--sand-color);
+}
+.tree{
+    background-color: var(--tree-color);
+}
+.home{
+    background-color: var(--home-color);
+}
+.water_blocked{
+    background-color: var(--water-blocked-color);
+}
