@@ -6,20 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const erreur = 16;
 
-    //Mes Items
-    const grass = new Item("grass");
-    const water = new Item("water");
-    const water_blocked = new Item("water_blocked");
-    const tree = new Item("tree");
-    const sand = new Item("sand");
-    const home = new Item("home"); 
-
     //Mon Plateau
     for (let i = 0; i < numRows; i++) {
         const row = table.insertRow();
         for (let j = 0; j < numCols; j++) {
             const cell = row.insertCell();
-            cell.classList.add("water");
+            cell.classList.add(water.name);
         }
     }
 

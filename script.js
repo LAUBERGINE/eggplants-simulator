@@ -10,40 +10,39 @@ document.addEventListener('DOMContentLoaded', function () {
     let isSandSelect = false;
     let isHomeSelect = false;
 
+    let isWheatSeedSelect = false;
 
     let isFertilizedSelect = false;
-    let isWheatSeedSelect = false;
 
 
     let numberWheat = 0;
 
     table.addEventListener("click", function (event) {
         const targetCell = event.target;
+        
         if (!targetCell.classList.contains("water_blocked")) {
 
             if (isGrassSelect) {
-                targetCell.className = '';
-                targetCell.classList.toggle("grass");
+                grass.JustPlace(targetCell);
             }
             if (isWaterSelect) {
-                targetCell.className = '';
-                targetCell.classList.toggle("water");
+                water.JustPlace(targetCell);
             }
 
             if (targetCell.classList.contains("grass")) {
                 if (isHomeSelect) {
-                    targetCell.className = '';
-                    targetCell.classList.toggle("home");
+                    home.JustPlace(targetCell);
                 }
                 if (isTreeSelect) {
-                    targetCell.className = '';
-                    targetCell.classList.toggle("tree");
+                    tree.JustPlace(targetCell);
+                }
+                if(isWheatSeedSelect){
+                    wheat_seed.JustPlace(targetCell);
                 }
             }
 
             if (isSandSelect) {
-                targetCell.className = '';
-                targetCell.classList.toggle("sand");
+                sand.JustPlace(targetCell);
             }
 
         }
@@ -105,18 +104,17 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 isHomeSelect = false;
             }
-
+            if (this.id === 'wheat_seed') {
+                isWheatSeedSelect = true;
+            } else {
+                isWheatSeedSelect = false;
+            }
 
 
             if (this.id === 'fertilized') {
                 isFertilizedSelect = true;
             } else {
                 isFertilizedSelect = false;
-            }
-            if (this.id === 'wheat-seed') {
-                isWheatSeedSelect = true;
-            } else {
-                isWheatSeedSelect = false;
             }
 
         });

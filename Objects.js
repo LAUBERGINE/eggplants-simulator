@@ -36,4 +36,40 @@ class Item {
             }
         }
     }
+    JustPlace(cellule){
+        cellule.className = '';
+        cellule.classList.add(`${this.name}`);
+    }
+}
+
+class Seed extends Item{
+    constructor(name, time, plantation, give, numberGiveP, numberGiveS) {
+        super(name, name);
+        this.time = time;
+        this.plantation = plantation;
+        this.give = give;
+        this.numberGiveP = numberGiveP;
+        this.numberGiveS = numberGiveS;
+        this.NUMBERS_SEED = 0;
+        this.NUMBERS_PRODUCT = 0;
+    }
+    JustPlace(cellule){
+        super.JustPlace(cellule);
+        setTimeout(() => {
+            cellule.className = '';
+            cellule.classList.add(`${this.plantation}`);
+        }, this.time*1000 );
+        
+    }
+    Recolte(cellule){
+        cellule.className = '';
+        cellule.classList.add(`${this.give}`);
+        this.NUMBERS_PRODUCT = this.NUMBERS_PRODUCT + this.numberGiveP;
+        this.NUMBERS_SEED = this.NUMBERS_SEED + this.numberGiveS;
+    }
+}
+class Items{
+    constructor(name){
+        this.name = name;
+    }
 }

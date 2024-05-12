@@ -5,6 +5,9 @@
     --tree-color : #34ad44;
     --home-color: #ff0012;
     --water-blocked-color: #000083;
+
+    --wheat-color: #e4e49a;
+    --wheat-seed-color: #aa4118;
 }
 
 .water{
@@ -24,4 +27,15 @@
 }
 .water_blocked{
     background-color: var(--water-blocked-color);
+}
+
+
+.wheat_plantation{
+    background-color: var(--wheat-color);
+}
+.wheat_seed{
+    background-color: var(--wheat-seed-color);
+}
+.wheat{
+    background-color: var(--wheat-color);
 }
