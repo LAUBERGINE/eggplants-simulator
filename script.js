@@ -4,121 +4,60 @@ document.addEventListener('DOMContentLoaded', function () {
     const invTable = document.getElementById('inv_table');
     const invCells = invTable.getElementsByTagName("td");
 
-    let isGrassSelect = true;
-    let isWaterSelect = false;
-    let isTreeSelect = false;
-    let isSandSelect = false;
-    let isHomeSelect = false;
-
-    let isWheatSeedSelect = false;
-
-    let isFertilizedSelect = false;
-
-
-    let numberWheat = 0;
+    grass.isSelect = true;
 
     table.addEventListener("click", function (event) {
         const targetCell = event.target;
         
-        if (!targetCell.classList.contains("water_blocked")) {
+        if (!targetCell.classList.contains(water_blocked.name)) {
 
-            if (isGrassSelect) {
+            if (grass.isSelect) {
                 grass.JustPlace(targetCell);
             }
-            if (isWaterSelect) {
+            if (water.isSelect) {
                 water.JustPlace(targetCell);
             }
 
-            if (targetCell.classList.contains("grass")) {
-                if (isHomeSelect) {
+            if (targetCell.classList.contains(grass.name)) {
+                if (home.isSelect) {
                     home.JustPlace(targetCell);
                 }
-                if (isTreeSelect) {
+                if (tree.isSelect) {
                     tree.JustPlace(targetCell);
                 }
-                if(isWheatSeedSelect){
+                if(wheat_seed.isSelect){
                     wheat_seed.JustPlace(targetCell);
                 }
             }
 
-            if (isSandSelect) {
+            if (sand.isSelect) {
                 sand.JustPlace(targetCell);
             }
 
         }
 
-        // if (isFertilizedSelect) {
-        //     if (targetCell.classList.contains("highlight_text_color_green")) {
-        //         targetCell.className = '';
-        //         targetCell.classList.toggle("highlight_text_color_dark_red");
-        //     }
-        // }
-        // if (isWheatSeedSelect) {
-        //     if (!targetCell.classList.contains("highlight_text_color_pastel_yellow")) {
-        //         if (targetCell.classList.contains("highlight_text_color_dark_red")) {
-        //             targetCell.className = '';
-        //             targetCell.classList.toggle("highlight_text_color_pastel_yellow");
-        //         }
-        //     }
-        // }
-        // if (targetCell.classList.contains("highlight_text_color_pastel_yellow")) {
-        //     setTimeout(() => {
-        //         targetCell.className = '';
-        //         targetCell.classList.toggle("highlight_text_color_yellow");
-        //     }, 5000);
-        // }
-        // if (targetCell.classList.contains("highlight_text_color_yellow")) {
-        //     targetCell.className = '';
-        //     targetCell.classList.toggle("highlight_text_color_dark_red");
-        //     var nbintd = document.getElementById("wheat");
-        //     numberWheat = numberWheat + 2;
-        //     nbintd.innerText = numberWheat;
-
-        // }
     });
-
-    for (let i = 0; i < invCells.length; i++) {
-        invCells[i].addEventListener("click", function () {
-            if (this.id === 'grass') {
-                isGrassSelect = true;
-            } else {
-                isGrassSelect = false;
-            }
-            if (this.id === 'water') {
-                isWaterSelect = true;
-            } else {
-                isWaterSelect = false;
-            }
-            if (this.id === 'tree') {
-                isTreeSelect = true;
-            } else {
-                isTreeSelect = false;
-            }
-            if (this.id === 'sand') {
-                isSandSelect = true;
-            } else {
-                isSandSelect = false;
-            }
-            if (this.id === 'home') {
-                isHomeSelect = true;
-            } else {
-                isHomeSelect = false;
-            }
-            if (this.id === 'wheat_seed') {
-                isWheatSeedSelect = true;
-            } else {
-                isWheatSeedSelect = false;
-            }
-
-
-            if (this.id === 'fertilized') {
-                isFertilizedSelect = true;
-            } else {
-                isFertilizedSelect = false;
-            }
-
+    
+    Array.from(invCells).forEach(cell => {
+        cell.addEventListener("click", function () {
+            grass.isSelect = this.id === grass.name;
+            dirt.isSelect = this.id === dirt.name;
+            water.isSelect = this.id === water.name;
+            tree.isSelect = this.id === tree.name;
+            sand.isSelect = this.id === sand.name;
+            home.isSelect = this.id === home.name;
+            stone.isSelect = this.id === stone.name;
+            wood.isSelect = this.id === wood.name;
+            glass.isSelect = this.id === glass.name;
+            iron_ore.isSelect = this.id === iron_ore.name;
+            golden_ore.isSelect = this.id === golden_ore.name;
+            copper_ore.isSelect = this.id === copper_ore.name;
+            wheat_seed.isSelect = this.id === wheat_seed.name;
+            carrot_seed.isSelect = this.id === carrot_seed.name;
+            zucchini_seed.isSelect = this.id === zucchini_seed.name;
+            eggplant_seed.isSelect = this.id === eggplant_seed.name;
         });
-    }
-
-
+    });
+    
+    
 });

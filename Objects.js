@@ -1,6 +1,7 @@
 class Item {
     constructor(name) {
         this.name = name;
+        this.isSelect = false;
     }
     OnePlace(table, ligne, colone) {
         table.rows[ligne].cells[colone].className = '';
