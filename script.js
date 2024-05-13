@@ -10,33 +10,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const targetCell = event.target;
         
         if (!targetCell.classList.contains(water_blocked.name)) {
-
-            if (grass.isSelect) {
-                grass.JustPlace(targetCell);
+            switch(true) {
+                case grass.isSelect:
+                    grass.JustPlace(targetCell);
+                    break;
+                case water.isSelect:
+                    water.JustPlace(targetCell);
+                    break;
+                case targetCell.classList.contains(grass.name):
+                    switch(true) {
+                        case home.isSelect:
+                            home.JustPlace(targetCell);
+                            break;
+                        case tree.isSelect:
+                            tree.JustPlace(targetCell);
+                            break;
+                        case wheat_seed.isSelect:
+                            wheat_seed.JustPlace(targetCell);
+                            break;
+                    }
+                    break;
+                case sand.isSelect:
+                    sand.JustPlace(targetCell);
+                    break;
             }
-            if (water.isSelect) {
-                water.JustPlace(targetCell);
-            }
-
-            if (targetCell.classList.contains(grass.name)) {
-                if (home.isSelect) {
-                    home.JustPlace(targetCell);
-                }
-                if (tree.isSelect) {
-                    tree.JustPlace(targetCell);
-                }
-                if(wheat_seed.isSelect){
-                    wheat_seed.JustPlace(targetCell);
-                }
-            }
-
-            if (sand.isSelect) {
-                sand.JustPlace(targetCell);
-            }
-
         }
-
     });
+    
     
     Array.from(invCells).forEach(cell => {
         cell.addEventListener("click", function () {
