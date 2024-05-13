@@ -5,9 +5,23 @@
     --tree-color : #34ad44;
     --home-color: #ff0012;
     --water-blocked-color: #000083;
+    --dirt-color: #6b5241;
+    --stone-color: #3e3d3d;
+    --wood-color: #774634;
+    --glass-color: #d6ecff;
+
+    --iron-color: #8498aa;
+    --gold-color: #ffff8d;
+    --copper-color: #d78a54;
 
     --wheat-color: #e4e49a;
-    --wheat-seed-color: #aa4118;
+    --wheat-seed-color: #5fc37d;
+    --carrot-color: #f27a03;
+    --carrot-seed-color: #4dfd82;
+    --zucchini-color: #018a13;
+    --zucchini-seed-color: #3fd36b;
+    --eggplant-color: #7834FF;
+    --eggplant-seed-color: #0ed456;
 }
 
 .water{
@@ -28,6 +42,37 @@
 .water_blocked{
     background-color: var(--water-blocked-color);
 }
+.dirt{
+    background-color: var(--dirt-color)
+}
+.stone{
+    background-color: var(--stone-color)
+}
+.wood{
+    background-color: var(--wood-color);
+}
+.glass{
+    background-color: var(--glass-color);
+}
+
+.iron_ore{
+    background-color: var(--iron-color);
+}
+.iron{
+    background-color: var(--iron-color);
+}
+.golden_ore{
+    background-color: var(--gold-color);
+}
+.gold{
+    background-color: var(--gold-color);
+}
+.copper_ore{
+    background-color: var(--copper-color);
+}
+.copper{
+    background-color: var(--copper-color);
+}
 
 
 .wheat_plantation{
@@ -38,4 +83,34 @@
 }
 .wheat{
     background-color: var(--wheat-color);
+}
+
+.carrot_plantation{
+    background-color: var(--carrot-color);
+}
+.carrot_seed{
+    background-color: var(--carrot-seed-color);
+}
+.carrot{
+    background-color: var(--carrot-color);
+}
+
+.zucchini_plantation{
+    background-color: var(--zucchini-color);
+}
+.zucchini_seed{
+    background-color: var(--zucchini-seed-color);
+}
+.zucchini{
+    background-color: var(--zucchini-color);
+}
+
+.eggplant_plantation{
+    background-color: var(--eggplant-color);
+}
+.eggplant_seed{
+    background-color: var(--eggplant-seed-color);
+}
+.eggplant{
+    background-color: var(--eggplant-color);
 }
