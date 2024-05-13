@@ -8,36 +8,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
     table.addEventListener("click", function (event) {
         const targetCell = event.target;
-        
+
         if (!targetCell.classList.contains(water_blocked.name)) {
-            switch(true) {
+            switch (true) {
                 case grass.isSelect:
                     grass.JustPlace(targetCell);
+                    break;
+                case dirt.isSelect:
+                    dirt.JustPlace(targetCell);
                     break;
                 case water.isSelect:
                     water.JustPlace(targetCell);
                     break;
-                case targetCell.classList.contains(grass.name):
-                    switch(true) {
-                        case home.isSelect:
-                            home.JustPlace(targetCell);
-                            break;
-                        case tree.isSelect:
-                            tree.JustPlace(targetCell);
-                            break;
-                        case wheat_seed.isSelect:
-                            wheat_seed.JustPlace(targetCell);
-                            break;
-                    }
-                    break;
+                case tree.isSelect:
+                    tree.JustPlace(targetCell);
+                    break
                 case sand.isSelect:
                     sand.JustPlace(targetCell);
                     break;
+                case home.isSelect:
+                    home.JustPlace(targetCell);
+                    break;
+                case stone.isSelect:
+                    stone.JustPlace(targetCell);
+                    break;
+                case wood.isSelect:
+                    wood.JustPlace(targetCell);
+                    break;
+                case glass.isSelect:
+                    glass.JustPlace(targetCell);
+                    break;
+                case iron_ore.isSelect:
+                    iron_ore.JustPlace(targetCell);
+                    break;
+                case golden_ore.isSelect:
+                    golden_ore.JustPlace(targetCell);
+                    break;
+                case copper_ore.isSelect:
+                    copper_ore.JustPlace(targetCell);
+                    break;
+                case wheat_seed.isSelect:
+                    wheat_seed.JustPlace(targetCell);
+                    break;
+                case carrot_seed.isSelect:
+                    carrot_seed.JustPlace(targetCell);
+                    break;
+                case zucchini_seed.isSelect:
+                    zucchini_seed.JustPlace(targetCell);
+                    break;
+                case eggplant_seed.isSelect:
+                    eggplant_seed.JustPlace(targetCell);
+                    break;
+
             }
         }
     });
-    
-    
+
+
     Array.from(invCells).forEach(cell => {
         cell.addEventListener("click", function () {
             grass.isSelect = this.id === grass.name;
@@ -58,6 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
             eggplant_seed.isSelect = this.id === eggplant_seed.name;
         });
     });
-    
-    
+
+
 });
